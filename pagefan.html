@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gabarit — Présentation Mangaka</title>
+  <link rel="stylesheet" href="stylepagefan.css">
+  <script src="pagefan.js"></script>
+  
+</head>
+<body>
+  <div class="container">
+    <h1>Gabarit — Présentation d'un mangaka</h1>
+
+    <div class="controls">
+      <div class="panel">
+        <form id="editor">
+          <label for="name">Nom de l'artiste</label>
+          <input id="name" name="name" type="text" placeholder="Ex: Junichi Tanaka" value="" />
+
+          <label for="sub">Sous-titre / Nationalité & dates</label>
+          <input id="sub" name="sub" type="text" placeholder="Ex: Japon — né en 1982" />
+
+          <label for="bigtext">Texte principal (bio / présentation)</label>
+          <textarea id="bigtext" name="bigtext" placeholder="Racontez l'oeuvre, style, œuvres majeures..." >
+          </textarea>
+
+          <div style="display:flex;gap:8px;margin-top:8px;">
+            <div style="flex:1">
+              <label>Photo grande (couverture)</label>
+              <div class="file-input">
+                <input id="largeFile" type="file" accept="image/*" />
+                <button type="button" id="clearLarge">Effacer</button>
+              </div>
+            </div>
+            <div style="width:160px">
+              <label>Photo petite (portrait)</label>
+              <div class="file-input">
+                <input id="smallFile" type="file" accept="image/*" />
+                <button type="button" id="clearSmall">Effacer</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="controls-bottom">
+            <button class="btn" id="apply" type="button">Appliquer au gabarit</button>
+            <button class="btn secondary" id="download" type="button">Télécharger la page</button>
+            <button class="btn secondary" id="reset" type="button">Réinitialiser</button>
+          </div>
+
+          <p class="help">Les images sont chargées localement et insérées en prévisualisation. Le bouton "Télécharger la page" exporte un fichier HTML autonome prêt à être hébergé.</p>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h2 style="margin-top:0">Aperçu</h2>
+        <div class="preview">
+          <div class="template" id="template">
+            <div class="large-photo" id="largePhoto"> <span id="placeholderLarge">Image grande (zone)</span> </div>
+            <div class="side">
+              <div class="small-photo" id="smallPhoto"> <span id="placeholderSmall">Image petite (zone)</span> </div>
+              <div>
+                <h3 class="title" id="outName">Nom du mangaka</h3>
+                <div class="subtitle" id="outSub">Nationalité — dates</div>
+                <p class="big-text" id="outText">Texte de présentation. Cliquez sur "Appliquer au gabarit" pour insérer votre texte.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
